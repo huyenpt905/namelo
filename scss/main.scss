@@ -1,0 +1,50 @@
+@import "variables";
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a.active {
+  color: $color-active;
+}
+
+.header {
+  padding: 20px 0;
+  .topbar {
+    text-align: right;
+    margin-bottom: 0;
+    li {
+      display: inline-block;
+      padding: 4px 12px;
+    }
+  }
+
+  &__logo {
+    font-size: 36px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    color: $main-color;
+  }
+
+  &__nav {
+    li {
+      display: inline-block;
+      padding: 4px 12px;
+
+      a {
+        font-weight: bold;
+        line-height: 50px;
+      }
+    }
+  }
+
+
+}
