@@ -1,4 +1,16 @@
 @import "variables";
+@import "components";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+//html {
+//  font-size: 62.5%;
+//}
 
 ul {
   list-style: none;
@@ -12,39 +24,390 @@ a {
   }
 }
 
-a.active {
-  color: $color-active;
+.section__top {
+  padding-top: 30px;
+  .title {
+    margin: 0 0 20px;
+    color: $main-color;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p.slogan {
+    color: #696592;
+    font-weight: 400;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0 0 20px;
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1111;
+  border: 0;
+  background: none;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  
+  @include respond-to(lg) {
+    display: none;
+  }
+  i {
+    margin: 1.7rem 1.7rem 0 0;
+    color: #065e77;
+  }
 }
 
 .header {
+  position: fixed;
+  height: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 20px 0;
+  z-index: 2;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
   .topbar {
+    display: none;
     text-align: right;
     margin-bottom: 0;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    @include respond-to(lg) {
+      display: block;
+    }
     li {
       display: inline-block;
       padding: 4px 12px;
     }
   }
 
-  &__logo {
-    font-size: 36px;
-    font-weight: lighter;
-    letter-spacing: 3px;
-    color: $main-color;
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      font-size: 36px;
+      font-weight: lighter;
+      letter-spacing: 3px;
+      color: $main-color;
+    }
+
+    .main-nav {
+      display: none;
+      @include respond-to(lg) {
+        display: block;
+      }
+      li {
+        display: inline-block;
+        padding: 4px 12px;
+
+        &.active a,
+        &:hover > a {
+          transition: 0.3s;
+          color: $color-active;
+        }
+
+        a {
+          font-weight: bold;
+          line-height: 50px;
+        }
+      }
+    }
   }
+}//end-header
 
-  &__nav {
-    li {
-      display: inline-block;
-      padding: 4px 12px;
-
-      a {
+//#home
+#home {
+  background: url("../img/intro-bg.jpg") no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  .home {
+    max-width: 400px;
+    height: 170px;
+    &__intro {
+      position: relative;
+      height: 100%;
+      padding-top: 100px;
+      text-align: center;
+      top: 100%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      h1 {
+        font-size: 2rem;
+        color: $main-color;
+        @include respond-to(lg) {
+          font-size: 2.5rem;
+        }
+      }
+      .btn-orange {
+        background-color: $color-active;
+        color: #fff;
+        margin: 20px 0;
         font-weight: bold;
-        line-height: 50px;
+        font-size: .9rem;
+      }
+    }
+  }
+} //#home
+
+.about {
+  padding: $py-80;
+  margin: $my-30;
+  @include respond-to(md) {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  &__left {
+    margin: 30px;
+    position: relative;
+    @include respond-to(md) {
+      width: 45%;
+      //padding: 0 1rem;
+    }
+    @include respond-to(md) {
+      width: 35%;
+    }
+    &::before {
+      position: absolute;
+      left: -31px;
+      top: -30px;
+      width: 90%;
+      height: 92%;
+      z-index: -1;
+      content: "";
+      background-color: #ebf1fa;
+      transition: 0.5s;
+    }
+    &::after {
+      position: absolute;
+      right: -31px;
+      bottom: -30px;
+      width: 90%;
+      height: 92%;
+      z-index: -1;
+      content: "";
+      background-color: #ebf1fa;
+      transition: 0.5s;
+    }
+    img {
+      border: 8px solid #fff;
+      width: 100%;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      &:hover {
+        width: 100%;
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
       }
     }
   }
 
+  &__right {
+    @include respond-to(md) {
+      width: 45%;
+      padding: 0 1rem;
+    }
+    @include respond-to(md) {
+      width:55%;
+    }
+    .text {
+      margin-bottom: 30px;
+    }
+    .list {
+      li {
+        margin-bottom: 1rem;
+        i {
+          font-size: 1.2rem;
+          padding-right: 5px;
+          color: $color-active;
+        }
+      }
+    }
+  }
+}//.about
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
 
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
+
+#services {
+  background-color: $color-section;
+  padding: 80px 0;
+  margin: 30px 0;
+  .services {
+    margin-top: 40px;
+    &__item {
+      padding: 0 1rem;
+      animation-name: bounceInUp;
+      @include respond-to(md) {
+        width: 50%;
+      }
+      @include respond-to(lg) {
+        width: 33.33%;
+      }
+      &:nth-child(1) .item__icon {
+        background-color: #fceef3;
+        color: #ff689b;
+      }
+      &:nth-child(2) .item__icon {
+        background-color: #fff0da;
+        color: #e98e06;
+      }
+      &:nth-child(3) .item__icon {
+        background-color: #e6fdfc;
+        color: #3fcdc7;
+      }
+      &:nth-child(4) .item__icon {
+        background-color: #eafde7;
+        color: #41cf2e;
+      }
+      &:nth-child(5) .item__icon {
+        background-color: #e1eeff;
+        color: #2282ff;
+      }
+      &:nth-child(6) .item__icon {
+        background-color: #ecebff;
+        color: #8660fe;
+      }
+
+      .item {
+        padding: 2rem;
+        background-color: #fff;
+        margin: 0 10px 40px 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+        transition: all 0.3s ease-in-out;
+        text-align: center;
+        &:hover {
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+          transform: scale(1.1);
+          .item__title {
+            color: $color-active;
+          }
+        }
+
+        &__icon {
+          padding-top: 10px;
+          width: 80px;
+          height: 80px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          margin: 0 auto 15px auto;
+
+
+          i {
+            font-size: 2rem;
+          }
+        }
+        &__title {
+          color: $main-color;
+          margin-bottom: 18px;
+          font-size: 1.2rem;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -ms-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+        }
+        &__desc {
+          font-size: 14px;
+          line-height: 28px;
+          text-align: left;
+        ;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.c-active {
+  color:  $color-active;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.c-main {
+  color: $main-color;
+}
+
+.bg-while {
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+  background-color: #fff;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.d-none {
+  display: none!important;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.d-block {
+  display: block;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+

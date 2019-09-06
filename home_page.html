@@ -7,17 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 <!--    Bootstrap 4 framwork-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">-->
 <!--    Font-Awesome4.7.0-->
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/ionicons/css/ionicons.min.css">
 <!--    Google font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 <!--    Style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header class="header">
+<button class="mobile-nav" type="button">
+    <i class="fa fa-bars"></i>
+</button>
+<header class="header" id="header">
     <div class="container">
         <ul class="topbar">
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -27,10 +30,10 @@
         </ul>
         
         <div class="header__menu">
-            <h1 class="header__logo float-left">
+            <h1 class="logo">
                 <a href="#"><span>Namelo</span></a>
             </h1>
-            <nav class="header__nav float-right">
+            <nav class="main-nav">
                 <ul>
                     <li class="item active"><a href="#home">HOME</a></li>
                     <li class="item"><a href="#about">ABOUT</a></li>
@@ -43,6 +46,126 @@
         </div>
     </div>
 </header>
+
+<section id="home">
+    <div class="container">
+        <div class="home">
+            <div class="home__intro">
+                <h1>Name solutions <br> for Your <span class="c-active">Business!</span></h1>
+                <a class="btn btn-orange" href="#about">GET STARTED</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="about">
+            <div class="about__left">
+                <img src="img/about-img.jpg" alt="">
+            </div>
+            <div class="about__right">
+                <div class="section__top">
+                    <h1 class="title">About Us</h1>
+                    <p class="slogan">Odio sed id eos et laboriosam consequatur eos earum soluta.</p>
+                </div>
+                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="text">Aut dolor id. Sint aliquam consequatur ex ex labore. Et quis qui dolor nulla dolores neque. Aspernatur consectetur omnis numquam quaerat. Sed fugiat nisi. Officiis veniam molestiae. Et vel ut quidem alias veritatis repudiandae ut fugit. Est ut eligendi aspernatur nulla voluptates veniam iusto vel quisquam. Fugit ut maxime incidunt accusantium totam repellendus eum error. Et repudiandae eum iste qui et ut ab alias.</p>
+
+                <ul class="list">
+                    <li>
+                        <i class="fa fa-check-circle-o"></i>
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle-o"></i>
+                        Duis aute irure dolor in reprehenderit in voluptate velit.
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle-o"></i>
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate trideta storacalaperda
+                        mastiro dolore eu fugiat nulla pariatur.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end #home-->
+
+<section id="services">
+    <div class="container">
+        <div class="section__top text-center">
+            <h1 class="title">Services</h1>
+            <p class="slogan">Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+        </div>
+        <div class="d-flex d-flex-wrap services">
+            <div class="services__item">
+                <div class="item">
+                    <div class="item__icon">
+                        <i class="ion-ios-analytics-outline"></i>
+                    </div>
+                    <h3 class="item__title">Lorem Ipsum</h3>
+                    <p class="item__desc">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+            </div>
+            <div class="services__item">
+                <div class="item">
+                    <div class="item__icon">
+                        <i class="ion-ios-bookmarks-outline"></i>
+                    </div>
+                    <h3 class="item__title">Lorem Ipsum</h3>
+                    <p class="item__desc">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+            </div>
+            <div class="services__item">
+                <div class="item">
+                    <div class="item__icon">
+                        <i class="ion-ios-paper-outline"></i>
+                    </div>
+                    <h3 class="item__title">Lorem Ipsum</h3>
+                    <p class="item__desc">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+            </div>
+            <div class="services__item">
+                <div class="item">
+                    <div class="item__icon">
+                        <i class="ion-ios-speedometer-outline"></i>
+                    </div>
+                    <h3 class="item__title">Lorem Ipsum</h3>
+                    <p class="item__desc">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+            </div>
+            <div class="services__item">
+                <div class="item">
+                    <div class="item__icon">
+                        <i class="ion-ios-world-outline"></i>
+                    </div>
+                    <h3 class="item__title">Lorem Ipsum</h3>
+                    <p class="item__desc">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+            </div>
+            <div class="services__item">
+                <div class="item">
+                    <div class="item__icon">
+                        <i class="ion-ios-clock-outline"></i>
+                    </div>
+                    <h3 class="item__title">Lorem Ipsum</h3>
+                    <p class="item__desc">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--end #services -->
+<section id="portpolio"></section>
+<!--end #portpolio-->
+<section id="team"></section>
+<!--end #team-->
+<section id="contactus"></section>
+<!--end #contactus-->
 
 <script src="js/main.js"></script>
 </body>

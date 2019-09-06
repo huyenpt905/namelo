@@ -1,0 +1,81 @@
+//break-point for responsive -- MOBILE FIRST
+@mixin respond-to($media) {
+  @if $media == sm {
+    @media only screen and (min-width: 576px) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (min-width: 768px) { @content; }
+  }
+  @else if $media == lg {
+    @media only screen and (min-width: 992px) { @content; }
+  }
+  @else if $media == xl {
+    @media only screen and (min-width: 1200px) { @content; }
+  }
+} //mixin responsive
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include respond-to(sm) {
+    max-width: 540px;
+  }
+  @include respond-to(md) {
+    max-width: 720px;
+  }
+  @include  respond-to(lg) {
+    max-width: 960px;
+  }
+  @include  respond-to(xl) {
+    max-width: 1140px;
+  }
+} //.container
+
+//.row {
+//  display: -webkit-box;
+//  display: -ms-flexbox;
+//  display: flex;
+//  -ms-flex-wrap: wrap;
+//  flex-wrap: wrap;
+//  margin-right: -15px;
+//  margin-left: -15px;
+//}//.row
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.375rem 1.75rem;
+  line-height: 1.5rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out;
+  -moz-transition: color 0.15s ease-in-out;
+  -ms-transition: color 0.15s ease-in-out;
+  -o-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+  font-weight: 400;
+} //.btn
+
+//flex
+.d-flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+}
+
+.d-flex-wrap {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+//text
+.text-center {
+  text-align: center;
+}
