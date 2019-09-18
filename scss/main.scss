@@ -23,7 +23,20 @@ a {
     text-decoration: none;
   }
 }
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-section;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
 
+
+}
 .section__top {
   padding-top: 30px;
   .title {
@@ -46,7 +59,7 @@ a {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1111;
+  z-index: 2;
   border: 0;
   background: none;
   line-height: 1;
@@ -70,7 +83,7 @@ a {
   left: 0;
   width: 100%;
   padding: 20px 0;
-  z-index: 2;
+  z-index: 1;
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   -ms-transition: all .5s;
@@ -105,26 +118,107 @@ a {
     }
 
     .main-nav {
-      display: none;
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      //background: rgba(40, 38, 70, 0.8);;
+      height: 100%;
+      left: 0;
+      top: 0;
       @include respond-to(lg) {
-        display: block;
+        background: none;
+        position: unset;
+        width: unset;
+        height: unset;
+        //position: unset;
       }
-      li {
-        display: inline-block;
-        padding: 4px 12px;
+      &__list {
+        //transform: translateX(-100%);
+        padding-top: 20px;
+        height: 100%;
+        z-index: 2;
+        background: rgba(40, 38, 70, 0.8);
+        @include respond-to(lg) {
+          -webkit-transform: none;
+          -moz-transform: none;
+          -ms-transform: none;
+          -o-transform: none;
+          transform: none;
+          background: none;
+          height: unset;
+          width: unset;
+          padding-top: 0;
+        }
+      }
+      .main-nav__list{
+        width: 0;
+        overflow: hidden;
+        transition: all 0.4s linear;
+        @include respond-to(lg) {
+          width: unset;
+        }
+      }
+      .show-nav {
+        width: 300px;
+      }
 
+      li {
+        display: block;
+        padding: 4px 12px;
+        transition: all .5s ease;
+        &:hover {
+          padding-left: 18px;
+          font-weight: bold;
+          background: $color-section;
+        }
+        @include respond-to(lg) {
+          display: inline-block;
+          &:hover {
+            padding-left: 12px;
+            background: unset;
+          }
+        }
         &.active a,
         &:hover > a {
           transition: 0.3s;
-          color: $color-active;
+          color: #8dc2fa;
+          @include respond-to(lg) {
+            font-weight: bold;
+            color: $color-active;
+          }
         }
 
         a {
-          font-weight: bold;
+          color: #fff;
+          font-weight: 500;
           line-height: 50px;
+          @include respond-to(lg) {
+            font-weight: bold;
+            color: $main-color;
+          }
+        }
+      }
+      li.active {
+        background: $color-section;
+        @include respond-to(lg) {
+          background: unset;
         }
       }
     }
+
+    .bg-purple  {
+      background-color: rgba(40, 38, 70, 0.8);
+      cursor: pointer;
+      -webkit-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      -ms-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+
+
+
   }
 }//end-header
 
@@ -369,45 +463,4 @@ a {
 }
 
 
-
-
-.c-active {
-  color:  $color-active;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-}
-
-.c-main {
-  color: $main-color;
-}
-
-.bg-while {
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
-  background-color: #fff;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.d-none {
-  display: none!important;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-}
-.d-block {
-  display: block;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-}
 

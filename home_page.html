@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--    <meta http-equiv="refresh" content="1"/>-->
     <title>Document</title>
 <!--    Bootstrap 4 framwork-->
 <!--    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">-->
@@ -17,6 +18,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!--preloader-->
+<div class="preloader">
+    <img class="preloader__item" src="img/Spinner-1s-200px.gif" alt="">
+</div>
 <button class="mobile-nav" type="button">
     <i class="fa fa-bars"></i>
 </button>
@@ -34,7 +39,7 @@
                 <a href="#"><span>Namelo</span></a>
             </h1>
             <nav class="main-nav">
-                <ul>
+                <ul class="main-nav__list">
                     <li class="item active"><a href="#home">HOME</a></li>
                     <li class="item"><a href="#about">ABOUT</a></li>
                     <li class="item"><a href="#services">SERVICES</a></li>
@@ -100,7 +105,7 @@
             <h1 class="title">Services</h1>
             <p class="slogan">Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
         </div>
-        <div class="d-flex d-flex-wrap services">
+        <d         iv class="d-flex d-flex-wrap services">
             <div class="services__item">
                 <div class="item">
                     <div class="item__icon">
@@ -155,12 +160,24 @@
                     <p class="item__desc">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 <!--end #services -->
-<section id="portpolio"></section>
+
+<section id="why-choose-us">
+    <div class="container">
+        <div class="section__top text-center">
+            <h1 class="title">Why choose us?</h1>
+            <p class="slogan">Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+        </div>
+        <div class="choose"></div>
+    </div>
+</section>
+
+<section id="portpolio">
+
+</section>
 <!--end #portpolio-->
 <section id="team"></section>
 <!--end #team-->

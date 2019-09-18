@@ -75,7 +75,59 @@
   flex-wrap: wrap;
 }
 
+//d-block
+.d-block {
+  display: block;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.d-none {
+  display: none!important;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
 //text
 .text-center {
   text-align: center;
 }
+
+/*
+*** classes for js of project
+*/
+
+////// some color to use
+.c-active {
+  color:  $color-active;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.c-main {
+  color: $main-color;
+}
+
+.bg-while {
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+  background-color: #fff;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.c-white {
+  color: #fff!important;
+}
+
+
