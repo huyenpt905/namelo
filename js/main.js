@@ -6,9 +6,21 @@ const iconMobileNav = document.querySelector('.mobile-nav i');
 const mainNav =  document.querySelector('.main-nav');
 const listNav = document.querySelector('.main-nav .main-nav__list');
 
+const home = document.getElementById('home');
+const about = document.getElementById('about');
+const services = document.getElementById('services');
+const portfolio = document.getElementById('portfolio');
+const team = document.getElementById('team');
+const whyUs = document.getElementById('why-us');
+const contact = document.getElementById('contact');
+
+
+/*preloader*/
 window.addEventListener('load', () => {
     document.querySelector('.preloader').style.display = 'none';
 });
+
+/*ready func*/
 document.addEventListener('DOMContentLoaded', () => {
     let status = '1';
     window.addEventListener('scroll', () => {
@@ -17,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.classList.add('bg-while');
                 topBar.classList.add('d-none');
                 status = '0';
-                console.log('he');
             }
         }
         else if(window.pageYOffset <= 100) {
@@ -31,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobileNav.addEventListener('click', () => {
        showMobileNav();
-
     });
+
 
 
 });
@@ -44,6 +55,4 @@ function showMobileNav() {
     mainNav.classList.toggle('bg-purple');
     listNav.classList.toggle('show-nav');
 }
-function hideMobileNav() {
 
-}
