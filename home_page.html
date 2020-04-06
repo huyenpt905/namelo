@@ -537,28 +537,6 @@
                                 derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque
                                 felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
                         </div>
-
-                        <div class="item__newsletter">
-                            <h4>Our Newsletter</h4>
-                            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam
-                                illum dolore legam minim quorum culpa amet magna export quem.</p>
-                            <form action="" method="post">
-                                <input type="email" name="email"><input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item__links">
-                            <h4>Useful Links</h4>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Terms of service</a></li>
-                                <li><a href="#">Privacy policy</a></li>
-                            </ul>
-                        </div>
-
                         <div class="item__links">
                             <h4>Contact Us</h4>
                             <p>
@@ -574,6 +552,29 @@
                                 <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                                 <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item__links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Terms of service</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="item__newsletter">
+                            <h4>Our Newsletter</h4>
+                            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam
+                                illum dolore legam minim quorum culpa amet magna export quem.</p>
+                            <form id='subscribe'>
+                                <input type="email" name="email">
+                                <button type="submit" name="">Subscribe</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -598,16 +599,17 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject">
+                                    placeholder="Subject" required>
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                    required></textarea>
                                 <div class="validation"></div>
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" title="Send Message">
+                                <button type="submit" name="submit" title="Send Message">
                                     Send Message
                                 </button>
                             </div>
@@ -616,7 +618,7 @@
                 </div>
             </div>
             <div class="copyright">
-                © Copyright <strong>Ahmed Yehia</strong>. All Rights Reserved
+                © Copyright <strong>Huyen Phan</strong>. All Rights Reserved
             </div>
         </div>
     </footer>

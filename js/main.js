@@ -45,8 +45,10 @@ function showMobileNav() {
     listNav.classList.toggle('show-nav');
 }
 
-
-//Comment form
+/**
+ * Comment Form
+ */
+const API = 'http://5e8985b1b4252f0016a61eb3.mockapi.io/api';
 const comment = document.forms['comment'];
 
 comment.addEventListener('submit', postComment);
@@ -55,17 +57,42 @@ function postComment(e) {
     e.preventDefault();
 
     let data = {
-        name: `${comment.name.value}`,
-        email: `${comment.email.value}`,
-        subject: `${comment.subject.value}`,
-        message: `${comment.message.value}`
+        name: `${this.name.value}`,
+        email: `${this.email.value}`,
+        subject: `${this.subject.value}`,
+        message: `${this.message.value}`
     };
-    
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://5e8985b1b4252f0016a61eb3.mockapi.io/api/comments', true);
+    xhr.open('POST', `${API + '/comments'}`, true);
     xhr.setRequestHeader('Content-type', 'application/JSON');
 
     xhr.send(JSON.stringify(data));
     comment.reset();
+}
+
+//subscribe input
+const subscribe = document.forms['subscribe'];
+subscribe.addEventListener('submit', postSubscribe);
+
+function postSubscribe(e) {
+    e.preventDefault();
+    const btnSubmit = comment.submit;
+
+    let email = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+/;
+    if (!email.test(comment.email.value) || '') {
+        comment.email.attributes.required = true;
+    } else {
+        console.log('else');
+        let data = {
+            email: `${this.email.value}`
+        }
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', `${API + '/subscribe'}`, true);
+        xhr.setRequestHeader('Content-type', 'application/JSON');
+
+        xhr.send(JSON.stringify(data));
+        this.reset();
+    }
 }

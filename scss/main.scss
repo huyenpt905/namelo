@@ -827,29 +827,28 @@ a {
             text-transform: uppercase;
           }
         }
-        &__newsletter {
-          padding-right: 1rem;
+        #subscribe {
+          display: flex;
+          flex-direction: wrap;
+          margin-top: 30px;
+
         }
         &__newsletter input[type="email"] {
           padding: 6px 8px;
-          width: 65%;
+          // width: 65%;
           border: 1px solid #d9dde6;
-          margin-top: 30px;
         }
-        &__newsletter input[type="submit"] {
+        &__newsletter button[type="submit"] {
           background: $color-active;
           border: 1px solid $color-active;
-          width: 35%;
+          // width: 31%;
           padding: 6px 0;
           text-align: center;
           color: #fff;
           transition: 0.3s;
           cursor: pointer;
         }
-        &__links {
-
-          padding-left: 1rem;
-        }
+      
         &__links ul {
           @include respond-to(lg) {
             padding-top: 25px;
